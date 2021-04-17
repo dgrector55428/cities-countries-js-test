@@ -1,0 +1,132 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+body {
+  background-color: #2d3134;
+  color: #858585;
+}
+.wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#ddl-country,
+#ddl-state {
+  width: 300px !important;
+}
+
+#ddl-state {
+  margin-left: 25px !important;
+}
+
+.locationLbl {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.hide-slow {
+  display: none;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 3000ms ease-in-out, opacity 5000ms ease-in-out;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.align-label {
+  text-align: right;
+  padding: 0;
+  position: relative;
+  right: 50px;
+}
+
+.align-dropdown {
+  text-align: left;
+  padding: 0;
+  position: relative;
+  right: 50px;
+}
+
+.data-inputs {
+  width: 300px;
+  /* margin-bottom: 10px; */
+}
+
+#latWrapper,
+#lngWrapper {
+  margin-bottom: 10px;
+}
+
+#submitBtn {
+  width: 300px;
+  margin: 0 0 10px 95px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+#mapWrapper {
+  height: 400px;
+}
+
+#mapBtn {
+  width: 300px;
+  margin: 0 0 10px 95px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+#map {
+  height: 400px;
+  width: 80%;
+  align-items: center;
+  text-align: center;
+  top: 80px;
+}
+
+#cityWrapper,
+#streetWrapper {
+  margin-bottom: 10px;
+}
+
+/* MAP */
+
+#map {
+  height: 100%;
+}

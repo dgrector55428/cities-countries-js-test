@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Template</title>
+    <link rel="stylesheet" href="./vendors/bootstrap.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-9ZfPnbegQSumzaE7mks2IYgHoayLtuto3AS6ieArECeaR8nCfliJVuLh/GaQ1gyM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    integrity
+    "sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+    crossorigin="anonymous" />
+    <script>
+      function initMap() {
+        const uluru = { lat: -25.344, lng: 131.036 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid wrapper" id="address-editor">
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12 mb-4">
+              <div
+                class="alert alert-danger hidden"
+                id="form-alert"
+                role="alert"
+              >
+                <span id="alertMsg"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <h1>Country City List</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 align-label">
+              <label
+                for="country"
+                id="countryLbl"
+                class="form-label locationLbl"
+                >Country:
+              </label>
+            </div>
+            <div class="col-6 align-dropdown">
+              <select class="__dropDown" id="ddl-country" name="country">
+                <option value="" selected disabled>Select Country</option>
+              </select>
+            </div>
+          </div>
+          <div class="row hidden" id="stateWrapper">
+            <div class="col-6 align-label">
+              <label for="state" id="stateLbl" class="form-label locationLbl"
+                >State/Providence/Territory:
+              </label>
+            </div>
+            <div class="col-6 align-dropdown">
+              <select class="__dropDown" id="ddl-state" name="state"></select>
+            </div>
+          </div>
+          <div class="row hidden" id="cityWrapper">
+            <div class="col-6 align-label">
+              <label for="city" id="cityLbl" class="form-label locationLbl"
+                >City:
+              </label>
+            </div>
+            <div class="col-6 align-dropdown">
+              <input
+                type="text"
+                class="form-control data-inputs"
+                id="city-input"
+                placeholder="City"
+                value="Eagan"
+              />
+            </div>
+          </div>
+          <div class="row hidden" id="streetWrapper">
+            <div class="col-6 align-label">
+              <label for="street" id="streetLbl" class="form-label locationLbl"
+                >Street:
+              </label>
+            </div>
+            <div class="col-6 align-dropdown">
+              <input
+                type="text"
+                class="form-control data-inputs"
+                id="street-input"
+                placeholder="Street"
+              />
+            </div>
+          </div>
+          <div class="row hidden listButton" id="submitBtnWrapper">
+            <div class="col-4"></div>
+            <div class="col-4">
+              <button class="btn btn-secondary" id="submitBtn">Submit</button>
+            </div>
+            <div class="col-4"></div>
+          </div>
+          <div class="row hidden" id="latWrapper">
+            <div class="col-6 align-label">
+              <label for="street" id="streetLbl" class="form-label locationLbl"
+                >Latitude:
+              </label>
+            </div>
+            <div class="col-6 align-dropdown">
+              <input
+                type="text"
+                class="form-control data-inputs"
+                id="latCoords"
+                placeholder="Latitude"
+              />
+            </div>
+          </div>
+          <div class="row hidden" id="lngWrapper">
+            <div class="col-6 align-label">
+              <label for="street" id="streetLbl" class="form-label locationLbl"
+                >Longitude:
+              </label>
+            </div>
+            <div class="col-6 align-dropdown">
+              <input
+                type="text"
+                class="form-control data-inputs"
+                id="lngCoords"
+                placeholder="Longitude"
+              />
+            </div>
+          </div>
+          <div class="row hidden" id="mapBtnWrapper">
+            <div class="col-4"></div>
+            <div class="col-4">
+              <button class="btn btn-primary listButton" id="mapBtn">
+                Map It!
+              </button>
+            </div>
+            <div class="col-4"></div>
+          </div>
+        </div>
+        <div class="col-6 hidden" id="mapWrapper">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/jquery-ui.js"></script>
+    <script src="./scripts/popper.js"></script>
+    <script src="./vendors/bootstrap.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+      integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDYT08cfLogSuNS_h9weS2oskDoq48Du0&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+    <script src="./vendors/velocity.min.js"></script>
+    <script src="./scripts/scripts.js"></script>
+  </body>
+</html>
